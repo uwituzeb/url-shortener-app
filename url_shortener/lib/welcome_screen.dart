@@ -32,7 +32,7 @@ class WelcomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               const Text(
-                '',
+                'Transform Long Links into Short Journeys',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -48,7 +48,7 @@ class WelcomeScreen extends StatelessWidget {
                 
                 const SizedBox(height: 24.0),
                 ElevatedButton(
-                  onPressed: () => Navigator.pushNamed(context, '/login'),
+                  onPressed: () => Navigator.pushNamed(context, '/home'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Theme.of(context).primaryColor,
                     foregroundColor: Colors.white,
