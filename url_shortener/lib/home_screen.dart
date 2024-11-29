@@ -57,12 +57,22 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFFF8F9FE),
       body: SafeArea(
-        child: Center(
           child: Padding(
         padding: const EdgeInsets.all(20.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Container(
+          const Text(
+                'URL Shortener',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF2FD1CD),
+                ),
+              ),
+          Expanded(
+            child: Center(
+              child: Container(
             padding: const EdgeInsets.all(16.0),
             decoration: BoxDecoration(
               color: Colors.deepPurple.shade900,
@@ -138,10 +148,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     )
               ],
             ),
+          ),
+          
+            ),
           )
+          
         ],
-      ),)
-        )
+      ),),
+
         )
     );
   }
