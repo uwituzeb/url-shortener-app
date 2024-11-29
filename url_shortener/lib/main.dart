@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_shortener/url_history_screen.dart';
 import 'welcome_screen.dart';
 import 'home_screen.dart';
 import 'result_screen.dart';
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/welcome': (context) => const WelcomeScreen(),
         '/home': (context) => const HomeScreen(),
-        '/results': (context) => const ResultScreen()
+        '/results': (context) => const ResultScreen(),
+        '/history': (context) => const HistoryScreen(),
 
       },
     );

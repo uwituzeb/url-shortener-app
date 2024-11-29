@@ -1,7 +1,7 @@
-import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class UrlShortenerService {
+  // api url for the url shortening service
   static const String baseUrl = 'https://tinyurl.com/api-create.php';
 
   Future<String?> shortenUrl(String longUrl) async {
@@ -12,12 +12,12 @@ class UrlShortenerService {
       if (response.statusCode == 200) {
         return response.body;
       } else {
-        print('Error: Failed to shorten the URL');
+        // print('Error: Failed to shorten the URL');
         return null;
       }
 
     } catch(e){
-      print('Error: $e');
+      // print('Error: $e');
       return null;
     }
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:url_shortener/url_history_service.dart';
 import 'package:url_shortener/url_shortener_service.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,6 +13,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController _urlcontroller = TextEditingController();
   final UrlShortenerService _urlService = UrlShortenerService();
+  final UrlHistoryService _historyService = UrlHistoryService();
   bool _isLoading = false;
 
   final FocusNode _focusNode = FocusNode();
@@ -70,6 +72,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Color(0xFF2FD1CD),
                 ),
               ),
+            IconButton(
+          icon: const Icon(Icons.history, color: Color(0xFF2FD1CD)),
+          onPressed: () {
+            Navigator.pushNamed(context, '/history');
+          },
+          tooltip: 'View URL History',
+        ),
           Expanded(
             child: Center(
               child: Container(

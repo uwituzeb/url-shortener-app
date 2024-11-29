@@ -10,6 +10,7 @@ class ResultScreen extends StatefulWidget {
 
 class _ResultScreenState extends State<ResultScreen> {
 
+    // Functionality to copy the shortened URL to the clipboard and show a SnackBar
     void _copyToClipboard(String text){
         Clipboard.setData(ClipboardData(text: text));
         ScaffoldMessenger.of(context).showSnackBar(
@@ -19,6 +20,7 @@ class _ResultScreenState extends State<ResultScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Retrieve arguments passed to the screen
     final args = ModalRoute.of(context)?.settings.arguments as Map<String, String>?;
     final originalUrl = args?['originalUrl'] ?? '';
     final shortenedUrl = args?['shortenedUrl'] ?? '';
@@ -103,6 +105,13 @@ class _ResultScreenState extends State<ResultScreen> {
                 ],
                 ),
               ),
+              IconButton(
+          icon: const Icon(Icons.history, color: Color(0xFF2FD1CD)),
+          onPressed: () {
+            Navigator.pushNamed(context, '/history');
+          },
+          tooltip: 'View URL History',
+        ),
               const Spacer(),
               ElevatedButton(
                 onPressed: () => Navigator.pop(context),
